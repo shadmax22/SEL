@@ -36,6 +36,11 @@ class ____es {
     }
   }
   append(p) {
+    // if (!this.fragment) {
+    //   this.fragment = document.createDocumentFragment();
+    //   console.log("fragment created");
+    // }
+
     try {
       this.el.appendChild(p.el || p);
     } catch {}
