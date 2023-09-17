@@ -1,5 +1,5 @@
 {
-  "name": "@delta/sel",
+  "name": "@mdshad/sel",
   "version": "1.0.0",
   "description": "JQuery simplified",
   "main": "index.js",
@@ -17,6 +17,9 @@
     "reactive",
     "fast"
   ],
+   "publishConfig": {
+    "access": "public"
+  },
   "author": "MdShad",
   "license": "ISC",
   "bugs": {

@@ -9,6 +9,8 @@ class ____es {
 
       return c ? element : null;
     }
+
+    return this;
   }
   class(p) {
     this.el.classList.add(p);
@@ -26,7 +28,9 @@ class ____es {
     if (p === null || p === undefined) {
       return this.el.innerHTML;
     } else {
-      this.el.innerHTML = p;
+      for (let i = 0; this.el.length > i; i++) {
+        this.el[i].innerHTML = p;
+      }
       return this;
     }
   }
@@ -47,6 +51,19 @@ class ____es {
     return this;
   }
 
+  on(p, f) {
+    switch (p) {
+      case "click":
+        for (let i = 0; i < this.el.length; i++) {
+          this.el[i].onclick = () => {
+            f.call(this.el[i], new ____es(this.el[i]));
+          };
+        }
+
+        break;
+    }
+  }
+
   appends(p) {
     let fragment = document.createDocumentFragment();
     for (let i = 0; i < p.length; i++) {
@@ -57,7 +74,9 @@ class ____es {
   }
 
   appendRaw(p) {
-    this.el.innerHTML = this.el.innerHTML + p;
+    for (let i = 0; i < this.el.length; i++) {
+      this.el[i].innerHTML = this.el[i].innerHTML + p;
+    }
     return this;
   }
   get() {

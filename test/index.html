@@ -6,10 +6,12 @@
     <title>Document</title>
   </head>
   <body>
-    <script type="module">
-      import { s, el } from "../index.js";
+    <h1 class="green"></h1>
 
-      console.log(el);
+    <script type="module">
+      import { s, el, __ } from "../index.js";
+
+      s(".green").appendRaw($.grey);
     </script>
   </body>
 </html>
